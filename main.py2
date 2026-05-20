@@ -1,0 +1,36 @@
+#태두리
+frame_top    = box(pos=vector(0,  5.6, 0.1), size=vector(9.4, 0.4, 0.2), color=GOLD)
+frame_bottom = box(pos=vector(0, -5.6, 0.1), size=vector(9.4, 0.4, 0.2), color=GOLD)
+frame_left   = box(pos=vector(-4.7, 0,  0.1), size=vector(0.4, 11.4, 0.2), color=GOLD)
+frame_right  = box(pos=vector( 4.7, 0,  0.1), size=vector(0.4, 11.4, 0.2), color=GOLD)
+
+#릴
+reel_panel = box(
+    pos=vector(0, 0.8, 0.15),
+    size=vector(8, 5, 0.3),
+    color=SILVER
+)
+
+#동전 투입구
+slot_body = box(pos=vector(3, 2, 1.1),  size=vector(1.5, 0.2, 0.1), color=SILVER)
+slot_lbl  = label(pos=vector(3, 2.6, 1), text="INSERT", height=10, color=GOLD, box=False)
+
+#돈 패널
+credit_panel = box(pos=vector(-2.5, -3.5, 1.1), size=vector(3, 1.2, 0.1), color=BLACK)
+credit_label = label(pos=vector(-2.5, -3.5, 1.2), text="CREDIT: 100", height=14, color=GREEN, box=False)
+
+#당첨금 패널
+win_panel = box(pos=vector(2, -3.5, 1.1), size=vector(2.5, 1.2, 0.1), color=BLACK)
+win_label = label(pos=vector(2, -3.5, 1.2), text="WIN: 0", height=14, color=GOLD, box=False)
+
+#젝팟 타이틀
+title_panel = box(pos=vector(0, 4.2, 1.1), size=vector(7, 1.4, 0.1), color=RED)
+title_label = label(pos=vector(0, 4.2, 1.2), text="🎰 JACKPOT", height=22, color=GOLD, box=False)
+
+#레버
+lever_pole = cylinder(
+    pos=vector(5.5, 1, 0),
+    axis=vector(0, -3, 0),
+    radius=0.18, color=RED
+)
+lever_ball = sphere(pos=vector(5.5, 1.3, 0), radius=0.4, color=RED)
