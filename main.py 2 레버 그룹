@@ -1,0 +1,9 @@
+Web VPython 3.2
+
+lever_pole = cylinder(
+    pos=vector(5.5, 1, 0),
+    axis=vector(0, -3, 0),
+    radius=0.18, color=RED
+)
+lever_ball = sphere(pos=vector(5.5, 1.3, 0), radius=0.4, color=RED)
+a = compound( [lever_pole, lever_ball] )
