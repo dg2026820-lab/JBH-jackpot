@@ -1,0 +1,1 @@
+title_label = label(pos=vector(0, 4.2, 1.2), text="🎰 JACKPOT", height=22, color=GOLD, box=False)
