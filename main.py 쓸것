@@ -1,0 +1,34 @@
+참고할것: 오류가 났던것: 이병걸이 만든 전광판에서 probability_panel이랑 오준범이 만들었던 코드를 합치니까 둘중에 하나가 이유를 모르겠지만 작동을 안해서 조금더 진행도가 빨랐던 준범이의 코드를 베이스로 만들기로함.
+준범이코드에서는 원래 무작위로 바뀌는 릴이 총9개였는데 한줄만 남겨서 바뀌게함. 
+원래 계획은 
+#print(probability1[int(random.randint(0,8))])
+print(random.choice(probability1))
+
+probability2 = ["7","★", "♠","♥","♦","BAR", "7","7","X"]
+
+#print(probabilit2[int(random.randint(0,8))]) 
+print(random.choice(probability2))
+
+probability3 = ["7","★", "♠","♥","♦","BAR", "7","7","X"]
+
+#print(probability3[int(random.randint(0,8))])
+print(random.choice(probability3))
+
+#전광판
+
+probability_panel1 = box(pos = vector(0,0,0), size = vec(3,1.5,3), color = RED)
+a = label(pos = vector(0,0,3), text=random.choice(probability1))
+while True : 
+    rate(10)
+    a.text=random.choice(probability1)
+    
+probability_panel2 = box(pos = vector(0,0,0), size = vec(3,1.5,3), color = BLUE)
+b = label(pos = vector(10,0,3), text=random.choice(probability2))
+while True : 
+    rate(10)
+    b.text=random.choice(probability2)
+
+probability_panel3 = box(pos = vector(10,0,0), size = vec(3,1.5,3), color = BLACK)
+t = label(pos = vector(20,0,3), text=random.choice(probability3))
+라는 코드에서 확률은 7이 33.3%로 나오게 하고 싶었어서 계산하기 쉽게 총 리스트안에 있는 9개의 문자중에 7을 3개 넣었고 그 리스트중에서 하나가 나오게 하고 싶었는데 아쉬워서 씀.
+아래에는 아무것도 하지 않아도 자동으로 랜덤하게 문자들이 바꾸다가 무언가 키를 누르면 멈추는 기능을 만들기위한 첫단계였었는데 어쩔수 없이 그냥 이코드는 안쓰기로 합의봄.
