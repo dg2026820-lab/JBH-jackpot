@@ -1,0 +1,48 @@
+Web VPython 3.2
+import random
+GOLD   = vector(1.0, 0.84, 0.0)
+SILVER = vector(0.75, 0.75, 0.75)
+RED    = vector(0.9, 0.1, 0.1)
+GREEN  = vector(0.1, 0.8, 0.2)
+BLUE   = vector(0.1, 0.3, 0.9)
+WHITE  = color.white
+BLACK  = color.black
+DARK   = vector(0.12, 0.12, 0.15)
+color_list = [GOLD, SILVER, RED, GREEN, BLUE, WHITE]
+
+scene.title = "🎰 잭팟 머신"
+scene.width = 800
+scene.height = 600
+scene.background = color.black
+
+body = box(pos=vector(0,0,0), size=vector(9,11,2), color=DARK)
+frame_top    = box(pos=vector(0,  5.6, 0.1), size=vector(9.4, 0.4, 0.2), color=GOLD)
+frame_bottom = box(pos=vector(0, -5.6, 0.1), size=vector(9.4, 0.4, 0.2), color=GOLD)
+frame_left   = box(pos=vector(-4.7, 0, 0.1), size=vector(0.4, 11.4, 0.2), color=GOLD)
+frame_right  = box(pos=vector( 4.7, 0, 0.1), size=vector(0.4, 11.4, 0.2), color=GOLD)
+reel_panel   = box(pos=vector(0, 0.8, 0.15), size=vector(8, 5, 0.3), color=SILVER)
+slot_body    = box(pos=vector(3, 2, 1.1), size=vector(1.5, 0.2, 0.1), color=SILVER)
+slot_lbl     = label(pos=vector(3, 2.6, 1), text="INSERT", height=10, color=GOLD)
+credit_panel = box(pos=vector(-2.5, -3.5, 1.1), size=vector(3, 1.2, 0.1), color=BLACK)
+credit_label = label(pos=vector(-2.5, -3.5, 1.2), text="CREDIT: 100", height=14, color=GREEN)
+win_panel    = box(pos=vector(2, -3.5, 1.1), size=vector(2.5, 1.2, 0.1), color=BLACK)
+win_label    = label(pos=vector(2, -3.5, 1.2), text="WIN: 0", height=14, color=GOLD)
+title_panel  = box(pos=vector(0, 4, 1.1), size=vector(7, 1.4, 0.1), color=RED)
+title_label  = label(pos=vector(0, 4, 1.2), text="🎰 JACKPOT", height=22, color=GOLD)
+
+lever_pole = cylinder(pos=vector(5.4, 1, 0), axis=vector(0,-3,0), radius=0.18, color=RED)
+lever_ball = sphere(pos=vector(5.4, 1.3, 0), radius=0.4, color=RED)
+lever_baal = sphere(pos=vector(5.4, -2, 0),  radius=0.4, color=RED)
+a = compound([lever_pole, lever_ball, lever_baal])
+
+reel1 = box(pos=vector(-2.4, 0, 1.2), size=vector(1,1,1), color=BLACK)
+reel2 = box(pos=vector( 0,   0, 1.2), size=vector(1,1,1), color=BLACK)
+reel3 = box(pos=vector( 2.4, 0, 1.2), size=vector(1,1,1), color=BLACK)
+
+while True:
+    rate(10000)
+    k = keysdown()
+    if ' ' in k:              
+        reel1.color = random.choice(color_list)
+        reel2.color = random.choice(color_list)
+        reel3.color = random.choice(color_list)
